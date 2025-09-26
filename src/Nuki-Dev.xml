@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" >
+ 
+  <op:config href="Nuki.conf.xml" />
+  
+  <op:ETS
+    OpenKnxId="0xAE"
+    ApplicationNumber="0x37" 
+    ApplicationVersion="2.4"
+    ReplacesVersions="2.3 2.2 2.1 2.0 1.15 1.14 1.13 1.12 1.11 1.10 1.9 1.8 1.7 1.6 1.5 1.4 1.3 1.2 1.1 1.0 0.15 0.14 0.13 0.12 0.11 0.10 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.2 0.1 0.0"
+    ApplicationRevision="0"
+    ProductName="Nuki"
+    BusCurrent="10"
+    BuildSuffix="-Debug"
+    BuildSuffixText=" (Debug)"
+    MediumTypes="MT-0 MT-5"
+    OrderNumber="MGKnxNUK" />
+
+  <op:define prefix="BASE" ModuleType="10"
+    share="../lib/OGM-Common/src/Common.share.xml">
+    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" />
+  </op:define>
+<!-- 
+  <op:define prefix="NET" ModuleType="12"
+    share="../lib/OFM-Network/src/Network.share.xml">
+    <op:verify File="../lib/OFM-Network/library.json" ModuleVersion="%NET_VerifyVersion%" />
+  </op:define> -->
+
+  <op:define prefix="UCT"  ModuleType="13"
+    share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml">
+  <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="%UCT_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="NUK" ModuleType="2"
+    share="../lib/OFM-Nuki/src/Nuki.share.xml"
+    template="../lib/OFM-Nuki/src/Nuki.templ.xml"
+    NumChannels="%NUK_NumberOfChannels%" KoSingleOffset="400" KoOffset="410" >
+    <op:verify File="../lib/OFM-Nuki/library.json" ModuleVersion="%NUK_VerifyVersion%" /> 
+  </op:define>
+
+  <op:define prefix="LOG" ModuleType="10" 
+  share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 
+  template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml" 
+  NumChannels="50" 
+  KoOffset="100">
+  <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="%LOG_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="FCB" ModuleType="11" 
+    share="../lib/OFM-FunctionBlocks/src/FunctionBlocks.share.xml" 
+    template="../lib/OFM-FunctionBlocks/src/FunctionBlocks.templ.xml" 
+    NumChannels="15" 
+    KoOffset="250">
+    <op:verify File="../lib/OFM-FunctionBlocks/library.json" ModuleVersion="%FCB_VerifyVersion%" />
+  </op:define>
+
+  <generate />
+</KNX>

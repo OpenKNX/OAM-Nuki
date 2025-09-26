@@ -1,0 +1,59 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "label": "Generate Dependencies.txt",
+            "type": "shell",
+            "command": "lib/OGM-Common/scripts/setup/reusable/Build-Dependencies.ps1",
+            "args": [
+            ],
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "OpenKNXproducer (Dev)",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+            "command": "OpenKNXproducer",
+            "args": [
+                "create",
+                "--Debug",
+                "Nuki-Dev"
+            ],
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "type": "PlatformIO",
+            "task": "Build (develop_ESP32_USB)",
+            "problemMatcher": [
+                "$platformio"
+            ],
+            "group": "build",
+            "label": "PlatformIO: Build (develop_ESP32_USB)"
+        },
+        // Build a release package for distribution
+        {
+            "label": "Build-Beta",
+            "type": "shell",
+            "command": "scripts/Build-Release.ps1",
+            "args": [
+
+            ],
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "Build-Release",
+            "type": "shell",
+            "command": "scripts/Build-Release.ps1",
+            "args": [
+                "Release"
+            ],
+            "problemMatcher": [],
+            "group": "test"
+        }
+    ]
+}
