@@ -14,7 +14,6 @@
     BusCurrent="10"
     BuildSuffix=""
     BuildSuffixText=""
-    MediumTypes="MT-0 MT-5"
     OrderNumber="MGKnxNUK" />  
 
   <op:define prefix="BASE" ModuleType="10"
