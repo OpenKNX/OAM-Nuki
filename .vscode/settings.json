@@ -70,6 +70,8 @@
         "variant": "cpp",
         "regex": "cpp",
         "shared_mutex": "cpp",
-        "locale": "cpp"
+        "locale": "cpp",
+        "source_location": "cpp",
+        "text_encoding": "cpp"
     }
 }

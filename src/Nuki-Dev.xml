@@ -12,8 +12,8 @@
     ApplicationRevision="0"
     ProductName="Nuki"
     BusCurrent="10"
-    BuildSuffix="-Debug"
-    BuildSuffixText=" (Debug)"
+    BuildSuffix="-Dev"
+    BuildSuffixText=" (Dev)"
     OrderNumber="MGKnxNUK" />
 
   <op:define prefix="BASE" ModuleType="10"

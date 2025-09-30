@@ -9,7 +9,7 @@
                                          (time & 0x3FFF) * 3600000 ) : 0 )
                                              
 #ifndef FIRMWARE_NAME
-    #define FIRMWARE_NAME "Nuki (Debug)"
+    #define FIRMWARE_NAME "Nuki (Dev)"
 #endif
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 55
