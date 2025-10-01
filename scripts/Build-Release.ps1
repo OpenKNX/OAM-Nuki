@@ -35,19 +35,14 @@ if (!$?) { exit 1 }
 # see comment in Build-Step.ps1 for argument description
 
 # Example call, the following 2 lines might be there multiple times for each firmware which should be built
-# ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_ETH SmartHomeBridge-Eth uf2
+# ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_ETH firmware_REG1_ETH uf2
 # if (!$?) { exit 1 }
 
- ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_LAN_TP_BASE firmware-SmartHomeBridge-REG1-LAN-TP-Base esp32
+
+ ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Adafruit_Feather_ESP32_V2_TP firmware-Adafruit_Feather_ESP32_V2_TP esp32
  if (!$?) { exit 1 }
 
- ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_LAN_BASE firmware-SmartHomeBridge-REG1-LAN-Base esp32
- if (!$?) { exit 1 }
-
- ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Adafruit_Feather_ESP32_V2_TP firmware-SmartHomeBridge-Adafruit_Feather_ESP32_V2_TP esp32
- if (!$?) { exit 1 }
-
- ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Adafruit_Feather_ESP32_V2_IP firmware-SmartHomeBridge-Adafruit_Feather_ESP32_V2_IP esp32
+ ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_OKNXHW_OPENKNXIAO_ESP32S3_MINI_V1 firmware-OKNXHW_OPENKNXIAO_ESP32S3_MINI_V1 esp32
  if (!$?) { exit 1 }
 
 # execute generic post-build steps
