@@ -8,6 +8,7 @@
     OpenKnxId="0xAE"
     ApplicationNumber="0x38" 
     ApplicationVersion="%ReleaseApplicationVersion%"
+    UpdateLibraryJson="true"
     ReplacesVersions="%ReleaseReplacesVersions%"
     ApplicationRevision="0"
     ProductName="Nuki"
@@ -34,7 +35,8 @@
   <op:define prefix="NUK" ModuleType="2"
     share="../lib/OFM-Nuki/src/Nuki.share.xml"
     template="../lib/OFM-Nuki/src/Nuki.templ.xml"
-    NumChannels="%NUK_NumberOfChannels%" KoSingleOffset="400" KoOffset="410" >
+    NumChannels="%NUK_NumberOfChannels%" KoSingleOffset="400" KoOffset="410"
+    useApplicationVersion="true" >
     <op:verify File="../lib/OFM-Nuki/library.json" ModuleVersion="%NUK_VerifyVersion%" /> 
   </op:define>
 

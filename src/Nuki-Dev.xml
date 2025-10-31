@@ -7,8 +7,9 @@
   <op:ETS
     OpenKnxId="0xAE"
     ApplicationNumber="0x37" 
-    ApplicationVersion="0.1"
-    ReplacesVersions="0.0"
+    ApplicationVersion="0.2.0"
+    UpdateLibraryJson="true"
+    ReplacesVersions="1.0 0.0"
     ApplicationRevision="0"
     ProductName="Nuki"
     BusCurrent="10"
@@ -34,7 +35,8 @@
   <op:define prefix="NUK" ModuleType="2"
     share="../lib/OFM-Nuki/src/Nuki.share.xml"
     template="../lib/OFM-Nuki/src/Nuki.templ.xml"
-    NumChannels="%NUK_NumberOfChannels%" KoSingleOffset="400" KoOffset="410" >
+    NumChannels="%NUK_NumberOfChannels%" KoSingleOffset="400" KoOffset="410"
+    useApplicationVersion="true"  >
     <op:verify File="../lib/OFM-Nuki/library.json" ModuleVersion="%NUK_VerifyVersion%" /> 
   </op:define>
 
