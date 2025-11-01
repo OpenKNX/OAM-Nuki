@@ -201,9 +201,9 @@
 #define NUK_CHAutoLock                           1      // 1 Bit, Bit 6
 #define     NUK_CHAutoLockMask 0x40
 #define     NUK_CHAutoLockShift 6
-#define NUK_CHAlarm                              1      // 2 Bits, Bit 5-4
-#define     NUK_CHAlarmMask 0x30
-#define     NUK_CHAlarmShift 4
+#define NUK_CHBurglarAlarm                       1      // 2 Bits, Bit 5-4
+#define     NUK_CHBurglarAlarmMask 0x30
+#define     NUK_CHBurglarAlarmShift 4
 #define NUK_CHLockMode                           1      // 1 Bit, Bit 3
 #define     NUK_CHLockModeMask 0x08
 #define     NUK_CHLockModeShift 3
@@ -257,8 +257,8 @@
 #define ParamNUK_CHOpenKNXLockNgo                    ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHOpenKNXLockNgo)) & NUK_CHOpenKNXLockNgoMask))
 // Automatisch versperren
 #define ParamNUK_CHAutoLock                          ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHAutoLock)) & NUK_CHAutoLockMask))
-// Alarm
-#define ParamNUK_CHAlarm                             ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHAlarm)) & NUK_CHAlarmMask) >> NUK_CHAlarmShift)
+// Einbruchalarm
+#define ParamNUK_CHBurglarAlarm                      ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHBurglarAlarm)) & NUK_CHBurglarAlarmMask) >> NUK_CHBurglarAlarmShift)
 // Versperren
 #define ParamNUK_CHLockMode                          ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockMode)) & NUK_CHLockModeMask))
 // Versperren in der Nacht anders
