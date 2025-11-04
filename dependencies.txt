@@ -3,6 +3,6 @@ ee3c00e v1 lib/knx https://github.com/OpenKNX/knx.git
 e003477 v1 lib/OFM-ConfigTransfer https://github.com/OpenKNX/OFM-ConfigTransfer.git
 7663283 v1 lib/OFM-FunctionBlocks https://github.com/OpenKNX/OFM-FunctionBlocks.git
 ea7c433 v1 lib/OFM-LogicModule https://github.com/OpenKNX/OFM-LogicModule.git
-7394e35 v1 lib/OFM-Nuki https://github.com/OpenKNX/OFM-Nuki
-193e462 v1 lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
+023b2ea v1 lib/OFM-Nuki https://github.com/OpenKNX/OFM-Nuki
+eb6cf23 v1dev lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
 d4f8a07 v1 lib/OGM-HardwareConfig https://github.com/OpenKNX/OGM-HardwareConfig.git
