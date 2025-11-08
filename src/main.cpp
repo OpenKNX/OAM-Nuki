@@ -1,9 +1,11 @@
 #include "OpenKNX.h"
-//#include "NetworkModule.h"
+#include "NetworkModule.h"
+#include "MqttModule.h"
 //#include "FileTransferModule.h"
 #include "Logic.h"
 #include "FunctionBlocksModule.h"
 #include "NukiModule.h"
+#include "NetworkModule.h"
 
 #include "pins_arduino.h"
 
@@ -86,7 +88,8 @@ void setup()
   openknx.addModule(3, openknxWLANModule);
 #endif
 #ifdef NET_ModuleVersion
-//  openknx.addModule(2, openknxNetwork);
+  openknx.addModule(2, openknxNetwork);
+  openknx.addModule(4, *new MqttModule());
 #endif
   openknx.addModule(1, openknxLogic);
 

@@ -22,10 +22,10 @@
     <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" />
   </op:define>
 
-  <!-- <op:define prefix="NET" ModuleType="12"
+  <op:define prefix="NET" ModuleType="12"
     share="../lib/OFM-Network/src/Network.share.xml">
     <op:verify File="../lib/OFM-Network/library.json" ModuleVersion="%NET_VerifyVersion%" />
-  </op:define> -->
+  </op:define>
 
   <op:define prefix="UCT"  ModuleType="13"
     share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml">
