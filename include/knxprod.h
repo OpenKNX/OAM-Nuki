@@ -14,10 +14,10 @@
 #define ETS_ModuleId_NUK 3
 #define ETS_ModuleId_LOG 4
 #define ETS_ModuleId_FCB 5
-#define MAIN_FirmwareName "Nuki (Beta)"
+#define MAIN_FirmwareName "Nuki (Dev)"
 #define MAIN_OpenKnxId 0xAE
-#define MAIN_ApplicationNumber 56
-#define MAIN_ApplicationVersion 2
+#define MAIN_ApplicationNumber 55
+#define MAIN_ApplicationVersion 5
 #define MAIN_FirmwareRevision 0
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 8635
@@ -337,15 +337,15 @@
 #define ParamNUK_CHNightStartAction                  ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHNightStartAction)) & NUK_CHNightStartActionMask) >> NUK_CHNightStartActionShift)
 // Aktion bei Nachtende
 #define ParamNUK_CHNightEndAction                    (knx.paramByte(NUK_ParamCalcIndex(NUK_CHNightEndAction)) & NUK_CHNightEndActionMask)
-// Manuelles öffnen startet Lock'n'Go
+// Manuelles Öffnen startet Lock'n'Go
 #define ParamNUK_CHLockNGoByManual                   ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoByManual)) & NUK_CHLockNGoByManualMask))
 // Öffnen über Nuki Taste startet Lock'n'Go
 #define ParamNUK_CHLockNGoByButton                   ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoByButton)) & NUK_CHLockNGoByButtonMask))
 // Verbleibend Count-Down verwenden
 #define ParamNUK_CHUseCountDownForAutoLock           ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHUseCountDownForAutoLock)) & NUK_CHUseCountDownForAutoLockMask) >> NUK_CHUseCountDownForAutoLockShift)
-// Weiters EIN Signal am 'OpenKNX Lock'n'Go' Eingang
+// Weiteres EIN Telegramm am 'OpenKNX Lock'n'Go' Eingang
 #define ParamNUK_CHLockNGoRepeat                     ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoRepeat)) & NUK_CHLockNGoRepeatMask) >> NUK_CHLockNGoRepeatShift)
-// AUS Signal am 'OpenKNX Lock'n'Go' Eingang
+// AUS Telegramm am 'OpenKNX Lock'n'Go' Eingang
 #define ParamNUK_CHLockNGoOff                        ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoOff)) & NUK_CHLockNGoOffMask))
 
 // deprecated
