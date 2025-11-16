@@ -14,19 +14,19 @@
 #define ETS_ModuleId_NUK 3
 #define ETS_ModuleId_LOG 4
 #define ETS_ModuleId_FCB 5
-#define MAIN_FirmwareName "Nuki (Dev)"
+#define MAIN_FirmwareName "Nuki (Beta)"
 #define MAIN_OpenKnxId 0xAE
-#define MAIN_ApplicationNumber 55
-#define MAIN_ApplicationVersion 5
+#define MAIN_ApplicationNumber 56
+#define MAIN_ApplicationVersion 4
 #define MAIN_FirmwareRevision 0
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 8635
-#define MAIN_MaxKoNumber 569
+#define MAIN_MaxKoNumber 609
 #define MAIN_OrderNumber "MGKnxNUK"
 #define BASE_ModuleVersion 21
 #define UCT_ModuleVersion 4
 #define NUK_ModuleVersion 1
-#define LOG_ModuleVersion 55
+#define LOG_ModuleVersion 56
 #define FCB_ModuleVersion 6
 // Parameter with single occurrence
 
@@ -337,9 +337,9 @@
 #define ParamNUK_CHNightStartAction                  ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHNightStartAction)) & NUK_CHNightStartActionMask) >> NUK_CHNightStartActionShift)
 // Aktion bei Nachtende
 #define ParamNUK_CHNightEndAction                    (knx.paramByte(NUK_ParamCalcIndex(NUK_CHNightEndAction)) & NUK_CHNightEndActionMask)
-// Manuelles Öffnen startet Lock'n'Go
+// Manuelles Entsperren startet Lock'n'Go
 #define ParamNUK_CHLockNGoByManual                   ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoByManual)) & NUK_CHLockNGoByManualMask))
-// Öffnen über Nuki Taste startet Lock'n'Go
+// Entsperren über Nuki Taste startet Lock'n'Go
 #define ParamNUK_CHLockNGoByButton                   ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoByButton)) & NUK_CHLockNGoByButtonMask))
 // Verbleibend Count-Down verwenden
 #define ParamNUK_CHUseCountDownForAutoLock           ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHUseCountDownForAutoLock)) & NUK_CHUseCountDownForAutoLockMask) >> NUK_CHUseCountDownForAutoLockShift)
@@ -353,7 +353,7 @@
 
 // Communication objects per channel (multiple occurrence)
 #define NUK_KoBlockOffset 410
-#define NUK_KoBlockSize 16
+#define NUK_KoBlockSize 20
 
 #define NUK_KoCalcNumber(index) (index + NUK_KoBlockOffset + _channelIndex * NUK_KoBlockSize)
 #define NUK_KoCalcIndex(number) ((number >= NUK_KoCalcNumber(0) && number < NUK_KoCalcNumber(NUK_KoBlockSize)) ? (number - NUK_KoBlockOffset) % NUK_KoBlockSize : -1)
@@ -375,6 +375,10 @@
 #define NUK_KoCHK13 13
 #define NUK_KoCHK14 14
 #define NUK_KoCHK15 15
+#define NUK_KoCHK16 16
+#define NUK_KoCHK17 17
+#define NUK_KoCHK18 18
+#define NUK_KoCHK19 19
 
 // 
 #define KoNUK_CHKO0                               (knx.getGroupObject(NUK_KoCalcNumber(NUK_KoCHKO0)))
@@ -408,6 +412,14 @@
 #define KoNUK_CHK14                               (knx.getGroupObject(NUK_KoCalcNumber(NUK_KoCHK14)))
 // 
 #define KoNUK_CHK15                               (knx.getGroupObject(NUK_KoCalcNumber(NUK_KoCHK15)))
+// 
+#define KoNUK_CHK16                               (knx.getGroupObject(NUK_KoCalcNumber(NUK_KoCHK16)))
+// 
+#define KoNUK_CHK17                               (knx.getGroupObject(NUK_KoCalcNumber(NUK_KoCHK17)))
+// 
+#define KoNUK_CHK18                               (knx.getGroupObject(NUK_KoCalcNumber(NUK_KoCHK18)))
+// 
+#define KoNUK_CHK19                               (knx.getGroupObject(NUK_KoCalcNumber(NUK_KoCHK19)))
 
 #define LOG_BuzzerInstalled                     305      // 1 Bit, Bit 7
 #define     LOG_BuzzerInstalledMask 0x80
