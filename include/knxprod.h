@@ -14,10 +14,10 @@
 #define ETS_ModuleId_NUK 3
 #define ETS_ModuleId_LOG 4
 #define ETS_ModuleId_FCB 5
-#define MAIN_FirmwareName "Nuki (Beta)"
+#define MAIN_FirmwareName "Nuki (Dev)"
 #define MAIN_OpenKnxId 0xAE
-#define MAIN_ApplicationNumber 56
-#define MAIN_ApplicationVersion 4
+#define MAIN_ApplicationNumber 55
+#define MAIN_ApplicationVersion 7
 #define MAIN_FirmwareRevision 0
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 8635
@@ -25,7 +25,7 @@
 #define MAIN_OrderNumber "MGKnxNUK"
 #define BASE_ModuleVersion 21
 #define UCT_ModuleVersion 4
-#define NUK_ModuleVersion 1
+#define NUK_ModuleVersion 2
 #define LOG_ModuleVersion 56
 #define FCB_ModuleVersion 6
 // Parameter with single occurrence
@@ -276,6 +276,9 @@
 #define NUK_CHLockNGoOff                        18      // 1 Bit, Bit 1
 #define     NUK_CHLockNGoOffMask 0x02
 #define     NUK_CHLockNGoOffShift 1
+#define NUK_CHLockNGoByAutoUnlock               18      // 1 Bit, Bit 0
+#define     NUK_CHLockNGoByAutoUnlockMask 0x01
+#define     NUK_CHLockNGoByAutoUnlockShift 0
 
 // Type
 #define ParamNUK_CHChannelType                       ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHChannelType)) & NUK_CHChannelTypeMask) >> NUK_CHChannelTypeShift)
@@ -337,7 +340,7 @@
 #define ParamNUK_CHNightStartAction                  ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHNightStartAction)) & NUK_CHNightStartActionMask) >> NUK_CHNightStartActionShift)
 // Aktion bei Nachtende
 #define ParamNUK_CHNightEndAction                    (knx.paramByte(NUK_ParamCalcIndex(NUK_CHNightEndAction)) & NUK_CHNightEndActionMask)
-// Manuelles Entsperren startet Lock'n'Go
+// Manuelles entsperren startet Lock'n'Go
 #define ParamNUK_CHLockNGoByManual                   ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoByManual)) & NUK_CHLockNGoByManualMask))
 // Entsperren über Nuki Taste startet Lock'n'Go
 #define ParamNUK_CHLockNGoByButton                   ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoByButton)) & NUK_CHLockNGoByButtonMask))
@@ -347,6 +350,8 @@
 #define ParamNUK_CHLockNGoRepeat                     ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoRepeat)) & NUK_CHLockNGoRepeatMask) >> NUK_CHLockNGoRepeatShift)
 // AUS Telegramm am 'OpenKNX Lock'n'Go' Eingang
 #define ParamNUK_CHLockNGoOff                        ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoOff)) & NUK_CHLockNGoOffMask))
+// Entsperren über Auto Unlock startet Lock'n'Go
+#define ParamNUK_CHLockNGoByAutoUnlock               ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoByAutoUnlock)) & NUK_CHLockNGoByAutoUnlockMask))
 
 // deprecated
 #define NUK_KoOffset 410
