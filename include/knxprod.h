@@ -17,17 +17,17 @@
 #define MAIN_FirmwareName "Nuki (Beta)"
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 56
-#define MAIN_ApplicationVersion 5
+#define MAIN_ApplicationVersion 6
 #define MAIN_FirmwareRevision 0
 #define MAIN_ApplicationEncoding iso-8859-15
-#define MAIN_ParameterSize 8635
+#define MAIN_ParameterSize 8785
 #define MAIN_MaxKoNumber 609
 #define MAIN_OrderNumber "MGKnxNUK"
 #define BASE_ModuleVersion 21
 #define UCT_ModuleVersion 4
 #define NUK_ModuleVersion 2
 #define LOG_ModuleVersion 56
-#define FCB_ModuleVersion 6
+#define FCB_ModuleVersion 7
 // Parameter with single occurrence
 
 
@@ -2776,7 +2776,7 @@
 
 // Parameter per channel
 #define FCB_ParamBlockOffset 7570
-#define FCB_ParamBlockSize 71
+#define FCB_ParamBlockSize 81
 #define FCB_ParamCalcIndex(index) (index + FCB_ParamBlockOffset + _channelIndex * FCB_ParamBlockSize)
 
 #define FCB_CHChannelType                        0      // 8 Bits, Bit 7-0
@@ -3002,17 +3002,24 @@
 #define     FCB_CHCountDownTriggerMask 0x0F
 #define     FCB_CHCountDownTriggerShift 0
 #define FCB_CHCountDownTemplate                  6      // char*, 14 Byte
-#define FCB_CHCountDownTemplate1h               21      // char*, 14 Byte
-#define FCB_CHCountDownTemplate1m               36      // char*, 14 Byte
-#define FCB_CHCountDownTemplateEnd              51      // char*, 14 Byte
-#define FCB_CHCountDownTextPause                66      // char*, 1 Byte
-#define FCB_CHCountDownTextRun                  68      // char*, 1 Byte
-#define FCB_CHCountDownCounterKo                70      // 4 Bits, Bit 7-4
+#define FCB_CHCountDownTemplate1h               20      // char*, 14 Byte
+#define FCB_CHCountDownTemplate1m               34      // char*, 14 Byte
+#define FCB_CHCountDownTemplateEnd              48      // char*, 14 Byte
+#define FCB_CHCountDownTextPause                62      // char*, 1 Byte
+#define FCB_CHCountDownTextRun                  63      // char*, 1 Byte
+#define FCB_CHCountDownCounterKo                64      // 4 Bits, Bit 7-4
 #define     FCB_CHCountDownCounterKoMask 0xF0
 #define     FCB_CHCountDownCounterKoShift 4
-#define FCB_CHCountDownTextKo                   70      // 2 Bits, Bit 3-2
+#define FCB_CHCountDownTextKo                   64      // 2 Bits, Bit 3-2
 #define     FCB_CHCountDownTextKoMask 0x0C
 #define     FCB_CHCountDownTextKoShift 2
+#define FCB_CHCountDownTemplateStopp            65      // char*, 14 Byte
+#define FCB_CHCountDownMaxDelayBase             79      // 2 Bits, Bit 7-6
+#define     FCB_CHCountDownMaxDelayBaseMask 0xC0
+#define     FCB_CHCountDownMaxDelayBaseShift 6
+#define FCB_CHCountDownMaxDelayTime             79      // 14 Bits, Bit 13-0
+#define     FCB_CHCountDownMaxDelayTimeMask 0x3FFF
+#define     FCB_CHCountDownMaxDelayTimeShift 0
 #define FCB_CHMonitoringValueType                2      // 8 Bits, Bit 7-0
 #define FCB_CHMonitoringWDEnabled                3      // 1 Bit, Bit 7
 #define     FCB_CHMonitoringWDEnabledMask 0x80
@@ -3332,6 +3339,14 @@
 #define ParamFCB_CHCountDownCounterKo                ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownCounterKo)) & FCB_CHCountDownCounterKoMask) >> FCB_CHCountDownCounterKoShift)
 // Text
 #define ParamFCB_CHCountDownTextKo                   ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownTextKo)) & FCB_CHCountDownTextKoMask) >> FCB_CHCountDownTextKoShift)
+// Stopp
+#define ParamFCB_CHCountDownTemplateStopp            (knx.paramData(FCB_ParamCalcIndex(FCB_CHCountDownTemplateStopp)))
+// Maximalzeit Einheit
+#define ParamFCB_CHCountDownMaxDelayBase             ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownMaxDelayBase)) & FCB_CHCountDownMaxDelayBaseMask) >> FCB_CHCountDownMaxDelayBaseShift)
+// Maximalzeit
+#define ParamFCB_CHCountDownMaxDelayTime             (knx.paramWord(FCB_ParamCalcIndex(FCB_CHCountDownMaxDelayTime)) & FCB_CHCountDownMaxDelayTimeMask)
+// Maximalzeit (in Millisekunden)
+#define ParamFCB_CHCountDownMaxDelayTimeMS           (paramDelay(knx.paramWord(FCB_ParamCalcIndex(FCB_CHCountDownMaxDelayTime))))
 // Werttype
 #define ParamFCB_CHMonitoringValueType               (knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringValueType)))
 // Zeitüberwachung aktiv
@@ -3502,7 +3517,7 @@
 #define BASE_KommentarModuleModuleParamSize 0
 #define BASE_KommentarModuleSubmodulesParamSize 0
 #define BASE_KommentarModuleParamSize 0
-#define BASE_KommentarModuleParamOffset 8635
+#define BASE_KommentarModuleParamOffset 8785
 #define BASE_KommentarModuleCalcIndex(index, m1) (index + BASE_KommentarModuleParamOffset + _channelIndex * BASE_KommentarModuleCount * BASE_KommentarModuleParamSize + m1 * BASE_KommentarModuleParamSize)
 
 
