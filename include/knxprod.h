@@ -17,9 +17,9 @@
 #define ETS_ModuleId_FCB 6
 #define MAIN_FirmwareName "Nuki (Dev)"
 #define MAIN_OpenKnxId 0xAE
-#define MAIN_ApplicationNumber 55
-#define MAIN_ApplicationVersion 10
-#define MAIN_FirmwareRevision 0
+#define MAIN_ApplicationNumber 56
+#define MAIN_ApplicationVersion 8
+#define MAIN_FirmwareRevision 3
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 8906
 #define MAIN_MaxKoNumber 609
@@ -293,18 +293,18 @@
 #define NUK_CHDoorMode                           9      // 4 Bits, Bit 3-0
 #define     NUK_CHDoorModeMask 0x0F
 #define     NUK_CHDoorModeShift 0
-#define NUK_CHAutoLockDelayBase                 10      // 2 Bits, Bit 7-6
-#define     NUK_CHAutoLockDelayBaseMask 0xC0
-#define     NUK_CHAutoLockDelayBaseShift 6
-#define NUK_CHAutoLockDelayTime                 10      // 14 Bits, Bit 13-0
-#define     NUK_CHAutoLockDelayTimeMask 0x3FFF
-#define     NUK_CHAutoLockDelayTimeShift 0
-#define NUK_CHAutoLockNightDelayBase            12      // 2 Bits, Bit 7-6
+#define NUK_CHAutoLockNightDelayBase            10      // 2 Bits, Bit 7-6
 #define     NUK_CHAutoLockNightDelayBaseMask 0xC0
 #define     NUK_CHAutoLockNightDelayBaseShift 6
-#define NUK_CHAutoLockNightDelayTime            12      // 14 Bits, Bit 13-0
+#define NUK_CHAutoLockNightDelayTime            10      // 14 Bits, Bit 13-0
 #define     NUK_CHAutoLockNightDelayTimeMask 0x3FFF
 #define     NUK_CHAutoLockNightDelayTimeShift 0
+#define NUK_CHAutoLockDelayBase                 12      // 2 Bits, Bit 7-6
+#define     NUK_CHAutoLockDelayBaseMask 0xC0
+#define     NUK_CHAutoLockDelayBaseShift 6
+#define NUK_CHAutoLockDelayTime                 12      // 14 Bits, Bit 13-0
+#define     NUK_CHAutoLockDelayTimeMask 0x3FFF
+#define     NUK_CHAutoLockDelayTimeShift 0
 #define NUK_CHCountDownKoType                   14      // 4 Bits, Bit 7-4
 #define     NUK_CHCountDownKoTypeMask 0xF0
 #define     NUK_CHCountDownKoTypeShift 4
@@ -377,17 +377,17 @@
 // Nach Tür schließen
 #define ParamNUK_CHDoorMode                          (knx.paramByte(NUK_ParamCalcIndex(NUK_CHDoorMode)) & NUK_CHDoorModeMask)
 // Automatisch versperren Zeit Einheit
-#define ParamNUK_CHAutoLockDelayBase                 ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHAutoLockDelayBase)) & NUK_CHAutoLockDelayBaseMask) >> NUK_CHAutoLockDelayBaseShift)
-// Automatisch versperren Zeit
-#define ParamNUK_CHAutoLockDelayTime                 (knx.paramWord(NUK_ParamCalcIndex(NUK_CHAutoLockDelayTime)) & NUK_CHAutoLockDelayTimeMask)
-// Automatisch versperren Zeit (in Millisekunden)
-#define ParamNUK_CHAutoLockDelayTimeMS               (paramDelay(knx.paramWord(NUK_ParamCalcIndex(NUK_CHAutoLockDelayTime))))
-// Automatisch versperren Zeit Einheit
 #define ParamNUK_CHAutoLockNightDelayBase            ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHAutoLockNightDelayBase)) & NUK_CHAutoLockNightDelayBaseMask) >> NUK_CHAutoLockNightDelayBaseShift)
 // Automatisch versperren Zeit
 #define ParamNUK_CHAutoLockNightDelayTime            (knx.paramWord(NUK_ParamCalcIndex(NUK_CHAutoLockNightDelayTime)) & NUK_CHAutoLockNightDelayTimeMask)
 // Automatisch versperren Zeit (in Millisekunden)
 #define ParamNUK_CHAutoLockNightDelayTimeMS          (paramDelay(knx.paramWord(NUK_ParamCalcIndex(NUK_CHAutoLockNightDelayTime))))
+// Automatisch versperren Zeit Einheit
+#define ParamNUK_CHAutoLockDelayBase                 ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHAutoLockDelayBase)) & NUK_CHAutoLockDelayBaseMask) >> NUK_CHAutoLockDelayBaseShift)
+// Automatisch versperren Zeit
+#define ParamNUK_CHAutoLockDelayTime                 (knx.paramWord(NUK_ParamCalcIndex(NUK_CHAutoLockDelayTime)) & NUK_CHAutoLockDelayTimeMask)
+// Automatisch versperren Zeit (in Millisekunden)
+#define ParamNUK_CHAutoLockDelayTimeMS               (paramDelay(knx.paramWord(NUK_ParamCalcIndex(NUK_CHAutoLockDelayTime))))
 // Objekt für Versperr-Count-Down
 #define ParamNUK_CHCountDownKoType                   ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHCountDownKoType)) & NUK_CHCountDownKoTypeMask) >> NUK_CHCountDownKoTypeShift)
 // Modus
@@ -412,7 +412,7 @@
 #define ParamNUK_CHLockNGoRepeat                     ((knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoRepeat)) & NUK_CHLockNGoRepeatMask) >> NUK_CHLockNGoRepeatShift)
 // AUS Telegramm am 'OpenKNX Lock'n'Go' Eingang
 #define ParamNUK_CHLockNGoOff                        (knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoOff)) & NUK_CHLockNGoOffMask)
-// Entsperren über Nuki App startet Lock'n'Go
+// Entsperren über Nuki App oder Schlüssel startet Lock'n'Go
 #define ParamNUK_CHLockNGoByApp                      ((bool)(knx.paramByte(NUK_ParamCalcIndex(NUK_CHLockNGoByApp)) & NUK_CHLockNGoByAppMask))
 
 // deprecated
