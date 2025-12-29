@@ -20,7 +20,12 @@
             "args": [
                 "create",
                 "--Debug",
-                "Nuki-Dev"
+                "Nuki-Dev",
+                "-h",
+                "../include/knxprod.h", 
+                "-o", 
+                "../Nuki-Dev.knxprod", 
+                "--ExchangeKoTexts"
             ],
             "problemMatcher": [],
             "group": "test"
