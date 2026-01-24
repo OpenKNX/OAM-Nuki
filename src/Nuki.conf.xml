@@ -4,13 +4,13 @@
  
   <op:config name="%LOG_VerifyVersion%" value="3.8" />
   <op:config name="%UCT_VerifyVersion%" value="0.4" />
-  <op:config name="%BASE_VerifyVersion%" value="1.5" />
+  <op:config name="%BASE_VerifyVersion%" value="1.6" />
   <!-- <op:config name="%NET_VerifyVersion%" value="0.5" /> -->
   <op:config name="%NUK_VerifyVersion%" value="0.4" />
-  <op:config name="%FCB_VerifyVersion%" value="0.8" />
+  <op:config name="%FCB_VerifyVersion%" value="0.9" />
 
-  <op:config name="%ReleaseApplicationVersion%" value="0.8.4" />
-  <op:config name="%ReleaseReplacesVersions%" value="0.7 0.6 0.5 0.4 0.3 0.2 0.1 0.0" />
+  <op:config name="%ReleaseApplicationVersion%" value="0.9.0" />
+  <op:config name="%ReleaseReplacesVersions%" value="0.8 0.7 0.6 0.5 0.4 0.3 0.2 0.1 0.0" />
 
   <op:config name="%LOG_NumChannelsDefault%" value="1" />
   <op:config name="%LOG_EnableSave%" value="1" />
@@ -22,5 +22,7 @@
 
   <op:config name="%NUK_NumberOfChannels%" value="10" />
   <op:config name="%NUK_NumChannelsDefault%" value="0" />
+
+  <op:config name="%BASE_Info1LedFunc%" value="1" /> <!-- Info1 LED is prog LED -->
 
 </KNX>
