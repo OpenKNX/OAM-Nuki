@@ -14,10 +14,10 @@
 #define ETS_ModuleId_NUK 3
 #define ETS_ModuleId_LOG 4
 #define ETS_ModuleId_FCB 5
-#define MAIN_FirmwareName "Nuki (Dev)"
+#define MAIN_FirmwareName "Nuki (Beta)"
 #define MAIN_OpenKnxId 0xAE
-#define MAIN_ApplicationNumber 55
-#define MAIN_ApplicationVersion 11
+#define MAIN_ApplicationNumber 56
+#define MAIN_ApplicationVersion 9
 #define MAIN_FirmwareRevision 0
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 8795

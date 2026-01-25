@@ -19,7 +19,7 @@ Eine vorkompilierte Firmware ist [hier](https://github.com/OpenKNX/OAM-Nuki/rele
 Als Hardware kann jede OpenKNX- oder OpenKNX-Ready-Hardware mit Bluetooth verwendet werden.
 Die vorkompilierte Firmware unterstützt:
 
-- [Adafruit ESP32 Feather V2](https://github.com/OpenKNX/OpenKNX/wiki/Adafruit-ESP32-Feather-V2)
+- OpenKNXiao V1 Mini ESP32S3
 
 ### Optional bei Adafruit ESP32 Feather V2: Zusätzlicher Prog-Taster und LED
 

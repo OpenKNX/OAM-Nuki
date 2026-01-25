@@ -42,16 +42,8 @@ if (!$?) { exit 1 }
  ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_OKNXHW_OPENKNXIAO_ESP32S3_MINI_V1 firmware-OKNXHW_OPENKNXIAO_ESP32S3_MINI_V1 esp32
  if (!$?) { exit 1 }
 
- ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Adafruit_Feather_ESP32_V2_TP firmware-Adafruit_Feather_ESP32_V2_TP esp32
- if (!$?) { exit 1 }
-
-# ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Adafruit_Feather_ESP32_V2_TP_LOW_POWER_CONSUMPTION firmware-Adafruit_Feather_ESP32_V2_TP_LOW_POWER_CONSUMPTION esp32
-#  if (!$?) { exit 1 }
-
-
-# ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_OKNXHW_OPENKNXIAO_ESP32S3_MINI_V1_LOW_POWER_CONSUMPTION firmware-OKNXHW_OPENKNXIAO_ESP32S3_MINI_V1_LOW_POWER_CONSUMPTION esp32
-#  if (!$?) { exit 1 }
-
+ #../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Adafruit_Feather_ESP32_V2_TP firmware-Adafruit_Feather_ESP32_V2_TP esp32
+ #if (!$?) { exit 1 }
 
 # execute generic post-build steps
 lib/OGM-Common/scripts/setup/reusable/Build-Release-Postprocess.ps1 $args[0]
