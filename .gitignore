@@ -12,3 +12,5 @@ src/*.generated.xml
 compile_commands.json
 include/versions.h
 data/
+managed_components/
+sdkconfig.*.old
