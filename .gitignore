@@ -12,3 +12,7 @@ src/*.generated.xml
 compile_commands.json
 include/versions.h
 data/
+sdkconfig.*
+.dummy
+managed_components/
+
