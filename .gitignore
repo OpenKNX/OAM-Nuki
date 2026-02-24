@@ -22,9 +22,7 @@ sdkconfig
 sdkconfig.*
 managed_components/
 dependencies.lock
-# /CMakeLists.txt: pioarduino generiert diese Datei im Projektstamm beim Build
 /CMakeLists.txt
-# .dummy: pioarduino-generiertes Verzeichnis (Dummy-Build-Artefakt)
 .dummy
 components
 idf_component.yml

@@ -186,6 +186,13 @@ void loop()
     led3->loop();
 #endif
   openknx.loop();
+
+  // Yield to scheduler without blocking — lets other RTOS tasks (BLE, idle)
+  // run if they are ready, but returns immediately otherwise.
+  // KNX loop timing is NOT affected (no fixed delay).
+  // DFS benefits: the idle task gets CPU slices between loop iterations,
+  // which is enough for the PM governor to scale the clock down.
+  taskYIELD();
 }
 
 #ifdef OPENKNX_DUALCORE
