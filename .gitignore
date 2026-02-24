@@ -26,9 +26,5 @@ dependencies.lock
 /CMakeLists.txt
 # .dummy: pioarduino-generiertes Verzeichnis (Dummy-Build-Artefakt)
 .dummy
-# /idf_component.yml: von setup_idf_components.py generiert
-/idf_component.yml
-# components/ Unterordner außer certs/ werden von setup_idf_components.py generiert.
-# components/certs/ ist manuell gepflegt und committed → kein Ignore-Pattern dafür!
-components/esp_*/
-components/espressif__*/
+components
+idf_component.yml
