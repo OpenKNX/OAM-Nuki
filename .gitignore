@@ -12,3 +12,23 @@ src/*.generated.xml
 compile_commands.json
 include/versions.h
 data/
+
+# ESP-IDF / pioarduino generated files (custom IDF build)
+# sdkconfig.*: alle sdkconfig-Varianten sind generierte Dateien - niemals committen
+#   sdkconfig            → IDF merged cache
+#   sdkconfig.defaults   → pioarduino TASMOTA hash header
+#   sdkconfig.<envname>  → von pre_generate_crt_asm.py aus INI-Werten generiert
+sdkconfig
+sdkconfig.*
+managed_components/
+dependencies.lock
+# /CMakeLists.txt: pioarduino generiert diese Datei im Projektstamm beim Build
+/CMakeLists.txt
+# .dummy: pioarduino-generiertes Verzeichnis (Dummy-Build-Artefakt)
+.dummy
+# /idf_component.yml: von setup_idf_components.py generiert
+/idf_component.yml
+# components/ Unterordner außer certs/ werden von setup_idf_components.py generiert.
+# components/certs/ ist manuell gepflegt und committed → kein Ignore-Pattern dafür!
+components/esp_*/
+components/espressif__*/
