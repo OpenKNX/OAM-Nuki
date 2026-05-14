@@ -8,7 +8,6 @@
 #include "pins_arduino.h"
 
 
-
 #if PROG_LED_PIN2
 #ifndef PROG_LED_PIN2_ACTIVE_ON
 #define PROG_LED_PIN2_ACTIVE_ON HIGH

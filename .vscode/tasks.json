@@ -31,6 +31,26 @@
             "group": "test"
         },
         {
+            "label": "OpenKNXproducer (Beta)",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+            "command": "OpenKNXproducer",
+            "args": [
+                "create",
+                "--Debug",
+                "Nuki",
+                "-h",
+                "../include/knxprod.h", 
+                "-o", 
+                "../Nuki.knxprod", 
+                "--ExchangeKoTexts"
+            ],
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
             "type": "PlatformIO",
             "task": "Build (develop_ESP32_USB)",
             "problemMatcher": [
